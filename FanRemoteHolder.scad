@@ -1,3 +1,13 @@
+// Holder for TR258A - Harbor Breeze fan remote
+
+// setup
+cliPreview = false;
+
+preview = $preview || cliPreview;
+$fa = preview ? 12 : 2;
+$fs = preview ? 2 : 0.5;
+
+// Params
 remoteLength = 115;
 remoteWidth = 38;
 remoteDepth = 18.3;
@@ -5,16 +15,16 @@ buttonDepth = 19;
 
 lowestButtonBaseHeight = 2 * 25.4;
 buttonWidth = 28.5;
-
-screwHOffset = 0;
-screwVOffset = 0.5 * 25.4;
-
 widthSpacingEachSide = 2;
 depthSpacing = 2;
 
 wallWidth = 2;
 
-// TBC!
+// Default hook holder
+screwTopOffset = 0.75 * 25.4;
+screwHOffset = 0;
+screwVOffset = 0.5 * 25.4;
+
 screwHeadDiameter = 5.5;
 screwHoleDiameter = 3;
 
@@ -41,7 +51,7 @@ difference()
 		cube([ buttonWidth + widthSpacingEachSide * 2, wallWidth + 2, holderLength + 2 ]);
 	}
 	// screw holes
-	for (zScrewPos = [ holderLength - (25.4 / 2), holderLength - (25.4 / 2) - screwVOffset ])
+	for (zScrewPos = [ holderLength - screwTopOffset, holderLength - screwTopOffset - screwVOffset ])
 	{
 		translate([ holderWidth / 2, holderDepth - wallWidth / 2, zScrewPos ])
 		{
