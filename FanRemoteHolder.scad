@@ -15,8 +15,9 @@ buttonDepth = 19;
 
 lowestButtonBaseHeight = 2 * 25.4;
 buttonWidth = 28.5;
-widthSpacingEachSide = 2;
+widthSpacingEachSide = 1;
 depthSpacing = 2;
+innerFrontLift = 2;
 
 wallWidth = 2;
 
@@ -43,7 +44,10 @@ difference()
 	// hollow out outermost cube, leave top open
 	translate([ wallWidth, wallWidth, wallWidth ])
 	{
-		cube([ remoteWidth + 2 * widthSpacingEachSide, remoteDepth + depthSpacing, holderLength + 2 ]);
+		multmatrix([ [ 1, 0, 0, 0 ], [ 0, 1, 0, 0 ], [ innerFrontLift / (remoteDepth + depthSpacing), 0, 1, 1 ] ])
+		{
+			cube([ remoteWidth + 2 * widthSpacingEachSide, remoteDepth + depthSpacing, holderLength + 2 ]);
+		}
 	}
 	// cut out over buttons - use widthSpacingEachSide as our clearance around those, too:
 	translate([ wallWidth + widthSpacingEachSide * 2, -1, wallWidth + lowestButtonBaseHeight - widthSpacingEachSide ])
