@@ -8,30 +8,30 @@ $fa = preview ? 12 : 2;
 $fs = preview ? 2 : 0.5;
 
 // Params
-remoteLength = 115;
-remoteWidth = 38;
-remoteDepth = 18.3;
-buttonDepth = 19;
+remoteLength = 115; // max total length of the remote
+remoteWidth = 38; // max total width of the remote
+remoteDepth = 18.3; // max total depth of the remote
+buttonDepth = 19; // max total depth of the remote including all buttons
 
-lowestButtonBaseHeight = 2 * 25.4;
-buttonWidth = 28.5;
-widthSpacingEachSide = 1;
-depthSpacing = 2;
-innerFrontLift = 2;
+lowestButtonBaseHeight = 2 * 25.4; // how far from the bottom of the remote to the lowest button (or text) you want exposed?
+buttonWidth = 28.5; // how wide is the front area that contains all the buttons you want exposed?
+widthSpacingEachSide = 1; // how much clearance each side, for ease of removal?
+depthSpacing = 2; // how much clearance behind remote, for ease of removal?
+innerFrontLift = 2; // the bottom of the holder will be this much higher internally at the front, so that the remote tips back slightly
+topClearance = 30; // how much of the top of the remote should be exposed to grip it for access?
 
-wallWidth = 2;
+wallWidth = 2; // how thick are the walls of the holder?
 
-// Default hook holder
-screwTopOffset = 0.75 * 25.4;
-screwHOffset = 0;
-screwVOffset = 0.5 * 25.4;
+// Screw spacing
+screwTopOffset = 0.75 * 25.4; // how far is the center of the top screwhole from the top of the holder?
+screwVOffset = 0.5 * 25.4; // how far apart vertically are the centers of the screwholes?
 
-screwHeadDiameter = 5.5;
-screwHoleDiameter = 3;
+screwHeadDiameter = 5.5; // Assuming a countersunk head, how wide is it?
+screwHoleDiameter = 3; // How wide is the screw thread?
 
-// calc
+// Calculations
 
-holderLength = remoteLength + wallWidth - 30;
+holderLength = remoteLength + wallWidth - topClearance;
 holderWidth = remoteWidth + 2 * widthSpacingEachSide + 2 * wallWidth;
 holderDepth = remoteDepth + depthSpacing + 2 * wallWidth;
 cutoutWidth = buttonWidth + widthSpacingEachSide * 2;

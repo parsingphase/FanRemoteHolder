@@ -18,12 +18,12 @@ buttonWidth = 31.5;
 widthSpacingEachSide = 1;
 depthSpacing = 2;
 innerFrontLift = 2; // curved bottom, may need *side* lift
+topClearance = 30;
 
 wallWidth = 2;
 
 // Default hook holder (no original mounting)
 screwTopOffset = 0.75 * 25.4;
-screwHOffset = 0;
 screwVOffset = 0.5 * 25.4;
 
 screwHeadDiameter = 5.5;
@@ -31,7 +31,7 @@ screwHoleDiameter = 3;
 
 // calc
 
-holderLength = remoteLength + wallWidth - 30;
+holderLength = remoteLength + wallWidth - topClearance;
 holderWidth = remoteWidth + 2 * widthSpacingEachSide + 2 * wallWidth;
 holderDepth = remoteDepth + depthSpacing + 2 * wallWidth;
 cutoutWidth = buttonWidth + widthSpacingEachSide * 2;
