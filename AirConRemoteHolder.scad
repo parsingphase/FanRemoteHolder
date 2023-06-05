@@ -1,4 +1,4 @@
-// Holder for TR258A - Harbor Breeze fan remote
+// Holder for Frigidaire Aircon remote
 
 // setup
 cliPreview = false;
@@ -8,20 +8,20 @@ $fa = preview ? 12 : 2;
 $fs = preview ? 2 : 0.5;
 
 // Params
-remoteLength = 115;
-remoteWidth = 38;
-remoteDepth = 18.3;
-buttonDepth = 19;
+remoteLength = 103;
+remoteWidth = 49;
+remoteDepth = 25;
+buttonDepth = 27.5;
 
-lowestButtonBaseHeight = 2 * 25.4;
-buttonWidth = 28.5;
+lowestButtonBaseHeight = 22; // button is 29.5 but lowest text is 23
+buttonWidth = 31.5;
 widthSpacingEachSide = 1;
 depthSpacing = 2;
-innerFrontLift = 2;
+innerFrontLift = 2; // curved bottom, may need *side* lift
 
 wallWidth = 2;
 
-// Default hook holder
+// Default hook holder (no original mounting)
 screwTopOffset = 0.75 * 25.4;
 screwHOffset = 0;
 screwVOffset = 0.5 * 25.4;
