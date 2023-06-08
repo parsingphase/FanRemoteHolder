@@ -43,9 +43,9 @@ difference()
 	// outermost bounds
 	cube([ holderWidth, remoteDepth + depthSpacing + 2 * wallWidth, holderLength ]);
 	// hollow out outermost cube, leave top open
-	translate([ wallWidth, wallWidth, wallWidth ])
+	translate([ wallWidth, wallWidth, wallWidth + innerFrontLift ])
 	{
-		multmatrix([ [ 1, 0, 0, 0 ], [ 0, 1, 0, 0 ], [ innerFrontLift / (remoteDepth + depthSpacing), 0, 1, 1 ] ])
+		multmatrix([ [ 1, 0, 0, 0 ], [ 0, 1, 0, 0 ], [ 0, - innerFrontLift / (remoteDepth + depthSpacing), 1, 1 ] ])
 		{
 			cube([ remoteWidth + 2 * widthSpacingEachSide, remoteDepth + depthSpacing, holderLength + 2 ]);
 		}
